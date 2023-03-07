@@ -4,15 +4,15 @@ git add * (staging area)
 git commit -m "msg" (final changes)
 git push origin <branch-name> || git push
 git pull
-git branch
+git branch <branch-name>
 git checkout
 git status
-git clone "url"
-git log(--all,--graph,--oneline)
+git clone "url" 
+git log(--all, --graph,--oneline)
 git stash (save,list,show,apply,drop,clear)
 git reset (--soft,--mixed,--hard) {commit id}
 git revert {commit id}
-git rebase <branch-name>
-git merge <branch-name>
+git rebase <branch-name> (1 clean master line all commits are copied from ranches to master)
+git merge <branch-name> (extra commit is created)
 git fetch 
-git check-pick
+git cherry-pick
