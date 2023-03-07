@@ -1,4 +1,5 @@
 git init
+git config
 git remote add origin "url" (to connect)
 git add * (staging area)
 git commit -m "msg" (final changes)
@@ -10,9 +11,9 @@ git status
 git clone "url" 
 git log(--all, --graph,--oneline)
 git stash (save,list,show,apply,drop,clear)
-git reset (--soft,--mixed,--hard) {commit id}
-git revert {commit id}
+git reset (--soft,--mixed,--hard) {commit id} (goback a commit)  (--soft reverts a commit but file is staged, --mixed reverts a commit and unstages the file file is in working directory, --hard removes from everywhere)
+git revert {commit id} (makes a commit with the copy from the commit id)
 git rebase <branch-name> (1 clean master line all commits are copied from ranches to master)
 git merge <branch-name> (extra commit is created)
 git fetch 
-git cherry-pick
+git cherry-pick {commit-id} (to copy the commits from one batch to other branch)        
