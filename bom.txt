@@ -1,0 +1,36 @@
+BROWSER OBJECT MODEL(BOM)
+    control behavior of browser
+    accesed by window (window.location)
+    objects:
+        location (change url, redirect url)
+        history
+        screen  (deal with client side browser)
+        navigation
+        document  (website)
+
+
+DOCUMENT OBJECT MODEL(DOM)
+    control behavior of website
+    objects:
+        forms
+        anchor
+    
+    querySelector()
+    querySelectorAll()
+    access elements methods
+        getElementById()
+        getElementsByClassName()
+        getElementsByTagName()
+        getElementsByName()
+        documents.form->for form
+
+SHADOW DOM
+    whatever styling u apply on shadow will not be applied on the actual and vice versa
+
+
+EVENTS
+    user
+    custom
+    window
+    mouse
+    keyboard

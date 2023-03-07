@@ -1,0 +1,212 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <title>TIC-TAC-TOE</title>
+    <!-- <style>
+        h1{
+
+        }
+    </style> -->
+</head>
+<body onload="displayScore()">
+    <div style="height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right,#151515, #ab3c13);">
+    <div class="container text-center ">
+        <div class="row">
+          <div class="col text-center">
+            <h1 style="color: antiquewhite; text-shadow: 2px 1px 4px #ede6e6;">TIC-TAC-TOE</h1>
+            <button class="btn btn-warning" onclick="reset()" style="box-shadow: 2px 1px 10px #ede6e6;;">Reset</button>          
+          </div>
+        </div>
+        <div class="row py-4">
+            <div class="col-4">
+                <h3 style="color: antiquewhite;">Player X Score : <a id="xscore"></a></h3>
+            </div>
+            <div class="col-4 text-center" style="box-shadow: 2px 1px 8px #ede6e6;;">
+                
+                <div class="row" style="height: 80px; border: 1px solid rgb(0, 0, 0);">
+                    <div class="bg-light col-4 py-4" style="border: 1px solid rgb(0, 0, 0); cursor: pointer; color: #ab3c13;" onclick="xory()" id="1"></div>
+                    <div class="bg-light col-4 py-4" style="border: 1px solid rgb(0, 0, 0); cursor: pointer; color: #ab3c13;" id="2" onclick="xory()"></div>
+                    <div class="bg-light col-4 py-4" style="border: 1px solid rgb(0, 0, 0); cursor: pointer; color: #ab3c13;"id="3" onclick="xory()"></div>
+                </div>
+                <div class="row" style="height: 80px; border: 1px solid rgb(0, 0, 0);">
+                    <div class="bg-light col-4 py-4" style="border: 1px solid rgb(0, 0, 0); cursor: pointer; color: #ab3c13;" id="4" onclick="xory()"></div>
+                    <div class="bg-light col-4 py-4" style="border: 1px solid rgb(0, 0, 0); cursor: pointer; color: #ab3c13;" id="5" onclick="xory()"></div>
+                    <div class="bg-light col-4 py-4" style="border: 1px solid rgb(0, 0, 0); cursor: pointer; color: #ab3c13;" id="6" onclick="xory()"></div>
+                </div>
+                <div class="row" style="height: 80px; border: 1px solid rgb(0, 0, 0);">
+                    <div class="bg-light col-4 py-4" style="border: 1px solid rgb(0, 0, 0); cursor: pointer; color: #ab3c13;" id="7" onclick="xory()"></div>
+                    <div class="bg-light col-4 py-4" style="border: 1px solid rgb(0, 0, 0); cursor: pointer;color: #ab3c13;" id="8" onclick="xory()"></div>
+                    <div class="bg-light col-4 py-4" style="border: 1px solid rgb(0, 0, 0); cursor: pointer;color: #ab3c13" id="9" onclick="xory()"></div>
+                </div>                
+            </div>
+            <div class="col-4">
+                <h3 style="color: antiquewhite;">Player O Score : <a id="yscore"></a></h3>
+            </div>
+        </div>
+      </div>
+      </div>
+      <script>
+        var x_score = 0;
+        var y_score = 0;
+        var c1 = -1;
+        var c2 = -1;
+        var c3 = -1;
+        var c4 = -1;
+        var c5 = -1;
+        var c6 = -1;
+        var c7 = -1;
+        var c8 = -1;
+        var c9 = -1;
+        var cli = 0
+        const xscoreChange = new Event("xscoreEvent"); // create
+        const yscoreChange = new Event("yscoreEvent"); // create
+        function reset(){
+            x_score =0
+            y_score =0
+            displayScore()
+        }
+        function displayScore(){
+                // document.addEventListener("xscoreEvent",function(){
+            document.getElementById("xscore").innerHTML = x_score
+                // alert("name event is triggered");
+            // })
+            
+            // document.addEventListener("yscoreEvent",function(){
+                document.getElementById("yscore").innerHTML = y_score
+                // alert("name event is triggered");
+            // })
+            var eles = document.querySelectorAll(".bg-light")
+            console.log("ELES", eles)
+            eles.forEach((ele)=>{
+                // console.log(ele.innerHTML)
+                ele.innerHTML = ""
+            })
+            c1 = -1;
+            c2 = -1;
+            c3 = -1;
+            c4 = -1;
+            c5 = -1;
+            c6 = -1;
+            c7 = -1;
+            c8 = -1;
+            c9 = -1;
+            cli = 0
+        }
+        function xory(){
+            console.log(event.target.innerText, cli)
+            var win = false
+            if(event.target.innerText === ""){
+                cli = cli +1
+                if(cli%2===0){
+                    if(event.target.id==="1"){
+                        c1 = 1
+
+                    }
+                    else if(event.target.id==="2"){
+                        c2 = 1
+                    }
+                    else if(event.target.id==="3"){
+                        c3 = 1
+                    }
+                    else if(event.target.id==="4"){
+                        c4 = 1
+                    }
+                    else if(event.target.id==="5"){
+                        c5 = 1
+                    }
+                    else if(event.target.id==="6"){
+                        c6 = 1
+                    }
+                    else if(event.target.id==="7"){
+                        c7 = 1
+                    }
+                    else if(event.target.id==="8"){
+                        c8 = 1
+                    }
+                    else{
+                        c9 = 1
+                    }
+                    event.target.innerText = "x"
+                }
+                else{
+                
+                    if(event.target.id==="1"){
+                        c1 = 2
+                    }
+                    else if(event.target.id==="2"){
+                        c2 = 2
+                    }
+                    else if(event.target.id==="3"){
+                        c3 = 2
+                    }
+                    else if(event.target.id==="4"){
+                        c4 = 2
+                    }
+                    else if(event.target.id==="5"){
+                        c5 = 2
+                    }
+                    else if(event.target.id==="6"){
+                        c6 = 2
+                    }
+                    else if(event.target.id==="7"){
+                        c7 = 2
+                    }
+                    else if(event.target.id==="8"){
+                        c8 = 2
+                    }
+                    else{
+                        c9 = 2
+                    }
+                    event.target.innerHTML = "o"
+                }
+                if(((c1==c2 && c2==c3 && c1!=-1) || (c4==c5 && c5==c6 && c4!=-1) || (c7==c8 && c8==c9 && c7!=-1) || (c1==c4 && c4==c7 && c1!=-1) || (c2==c5 && c5==c8 && c2!=-1) || (c3==c6 && c6==c9 && c3!=-1) || (c1==c5 && c5==c9 && c1!=-1) || (c3==c5 && c5==c7 && c3!=-1))){
+                    if(cli%2===0){
+                        x_score = x_score+1
+                        win = true
+                        alert("PLAYER X HAS WON")
+                        displayScore()
+                    }
+                    else{
+                        y_score = y_score+1
+                        win =true
+                        alert("PLAYER O HAS WON")
+                        displayScore()
+                    }
+                }
+                if(c1!=-1 && c2!=-1 && c3!=-1 && c4!=-1 && c5!=-1 && c6!=-1 && c7!=-1 && c8!=-1 && c9!=-1 && win!= true){
+                    alert("It's DRAW")
+                    displayScore()
+                }
+            }
+            else{
+                alert("You cant change existing cell")
+            }
+        }
+        
+
+
+        // document.getElementById("xscore").addEventListener("load",function(){ // trigger the event
+        //     alert("LOADED")
+        //     document.dispatchEvent(xscoreChange)
+        //     document.dispatchEvent(yscoreChange)
+        // })
+      </script>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+<!-- TASSSKKK
+TIC TAC TOE
+score 
+no updation
+draw
+-->

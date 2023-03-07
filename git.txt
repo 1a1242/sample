@@ -1,0 +1,18 @@
+git init
+git remote add origin "url" (to connect)
+git add * (staging area)
+git commit -m "msg" (final changes)
+git push origin <branch-name> || git push
+git pull
+git branch
+git checkout
+git status
+git clone "url"
+git log(--all,--graph,--oneline)
+git stash (save,list,show,apply,drop,clear)
+git reset (--soft,--mixed,--hard) {commit id}
+git revert {commit id}
+git rebase <branch-name>
+git merge <branch-name>
+git fetch 
+git check-pick
